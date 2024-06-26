@@ -8,10 +8,9 @@ BraTS 2020 [[homepage]](https://www.med.upenn.edu/cbica/brats2020/data.html) is 
 
 ## Installation
 1. **System requirements：**  
-We run our code on Python 3.9, PyTorch 1.12.1, CUDA 11.6.0, and cudann 8.4.1.50. Besides software packages required in [nnUNet project](https://github.com/MIC-DKFZ/nnUNet), install **monai** and **SimpleITK**:
+We run our code on Python 3.9, PyTorch 1.12.1, CUDA 11.6.0, and cudann 8.4.1.50. Besides software packages required in [nnUNet project](https://github.com/MIC-DKFZ/nnUNet), install **monai**, **einops** and **SimpleITK**:
 ```
-  pip install monai
-  pip install SimpleITK
+  pip install monai SimpleITK einops
 ```
 2. **Setting up the repository：**  
 You need plug our code in [nnUNet project](https://github.com/MIC-DKFZ/nnUNet) 

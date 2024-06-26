@@ -88,7 +88,7 @@ def main():
     parser.add_argument("-mr", help="mask_ratio", default=float)
     parser.add_argument("-mt", help="mask_type", default=None)
     parser.add_argument("-ms", help="mask_size", type=int)
-    parser.add_argument("--synthesize", default=True)
+    parser.add_argument("--synthesize", action="store_true", default=False)
     parser.add_argument("--lt", default=True, help='loss type, predict or reconstruct')
 
     args = parser.parse_args()
@@ -121,8 +121,14 @@ def main():
     else:
         fold = int(fold)
 
-    plans_file, output_folder_name, dataset_directory, stage, \
-    trainer_class = get_my_configuration(network, task, network_trainer, plans_identifier, loss='MSE')
+    (
+        plans_file, 
+        output_folder_name, 
+        dataset_directory, 
+        _,
+        stage, 
+        trainer_class
+    ) = get_default_configuration(network, task, network_trainer, plans_identifier)
 
     if network_trainer == 'mgTrainer':
         output_folder_name = os.path.join(os.path.split(output_folder_name)[0], 'model_gensis')
