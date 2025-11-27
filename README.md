@@ -1,4 +1,4 @@
-# Self-Supervised Learning via Reconstructing Multi-Modality MRI for Brain Tumor Segmentation
+# Intra-modality masked image modeling: A self-supervised pre-training method for brain tumor segmentation
 This repository contains the code for our self-supervised pre-training method for brain tumor segmentation. Our code is built on nnUNet, please install nnUNet correctly first and plug our code in following the installation guide. The pre-trained weights and finetuned weights can be found in <a href="https://drive.google.com/file/d/1bm6LYSQRmWMr3PKMPyPCVGiCl8-nHvyO/view?usp=drive_link"> pretrain</a>. and <a href="https://drive.google.com/file/d/17pS1wyPhV9HuteIPn_bOup7ojMQ8Jqkc/view?usp=drive_link"> finetune</a>. 
 
 ![image](./training/network_training/overview.png)
@@ -29,4 +29,19 @@ Pretraining with UNet automatic searched by nnUNet.
 Finetuning the pretrained model
 ```
   python  <~/nnUNet/nnunet/run/run_training_finetune.py> 3d_fullres finetuneV2 1 all -pre */model_best.pth -ft encoder
+```
+
+# Citation
+If you find this repository useful, please consider citing our paper:
+
+```bash
+@article{qi2024intra,
+  title={Intra-modality masked image modeling: A self-supervised pre-training method for brain tumor segmentation},
+  author={Qi, Liangce and Shi, Weili and Miao, Yu and Li, Yonghui and Feng, Guanyuan and Jiang, Zhengang},
+  journal={Biomedical Signal Processing and Control},
+  volume={95},
+  pages={106343},
+  year={2024},
+  publisher={Elsevier}
+}
 ```
